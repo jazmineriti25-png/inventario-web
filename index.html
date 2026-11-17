@@ -3,43 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Inventario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Administra y consulta tus productos en un solo lugar.">
+    <title>Inicio | Inventario Pastel</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <h1>Sistema de Inventario</h1>
-        <p>Aplicación demostrativa para la Unidad IV</p>
+        <h1>Inventario Pastel</h1>
+        <p>Una forma sencilla y bonita de cuidar tu inventario</p>
     </header>
 
     <nav>
-        <a href="index.html">Inicio</a>
+        <a href="index.html" aria-current="page">Inicio</a>
         <a href="productos.html">Productos</a>
         <a href="agregar.html">Agregar Producto</a>
     </nav>
 
     <main>
-        <h2>Bienvenido</h2>
-
-        <p>
-            Este sistema permite visualizar el inventario de productos
-            y registrar nuevos artículos.
-        </p>
-
-        <div class="card">
-            <h3>Módulos disponibles</h3>
-            <ul>
-                <li>Visualización de productos</li>
-                <li>Formulario de captura</li>
-                <li>Navegación entre páginas</li>
-            </ul>
-        </div>
+        <section class="welcome-card card">
+            <h2>¡Hola! Tu inventario, en orden.</h2>
+            <p>Registra productos, actualiza existencias y consulta tu catálogo desde un solo lugar. Los cambios se guardan en este navegador.</p>
+            <div class="actions welcome-actions">
+                <a class="button" href="productos.html">Ver productos</a>
+                <a class="button secondary" href="agregar.html">Agregar producto</a>
+            </div>
+        </section>
+        <section class="stats-grid" aria-label="Resumen del inventario">
+            <div class="stat-card"><span>Productos registrados</span><strong id="total-products">—</strong></div>
+            <div class="stat-card"><span>Unidades en existencia</span><strong id="total-units">—</strong></div>
+            <div class="stat-card"><span>Productos sin existencia</span><strong id="out-of-stock">—</strong></div>
+        </section>
     </main>
 
     <footer>
-        Aplicaciones Web - Unidad 4
+        Inventario Pastel · Tus productos, siempre a la mano
     </footer>
 
 </body>

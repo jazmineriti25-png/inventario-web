@@ -3,48 +3,61 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Agregar Producto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agregar producto | Inventario Pastel</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <h1>Registro de Producto</h1>
+        <h1>Inventario Pastel</h1>
+        <p>Agrega los detalles de tu producto</p>
     </header>
 
     <nav>
         <a href="index.html">Inicio</a>
         <a href="productos.html">Productos</a>
-        <a href="agregar.html">Agregar Producto</a>
+        <a href="agregar.html" aria-current="page">Agregar Producto</a>
     </nav>
 
     <main>
-
-        <form>
-
-            <label>Nombre del producto</label>
-            <input type="text" placeholder="Ingrese nombre">
-
-            <label>Categoría</label>
-            <input type="text" placeholder="Ingrese categoría">
-
-            <label>Descripción</label>
-            <textarea rows="4"></textarea>
-
-            <label>Cantidad</label>
-            <input type="number" placeholder="0">
-
-            <button type="submit">
-                Guardar Producto
-            </button>
-
+        <div class="page-heading">
+            <div>
+                <h2 id="form-title">Nuevo producto</h2>
+                <p>Los campos con * son obligatorios.</p>
+            </div>
+        </div>
+        <p id="page-message" class="notice" role="status" hidden></p>
+        <form id="product-form" novalidate>
+            <div class="form-grid">
+                <div>
+                    <label for="product-name">Nombre del producto *</label>
+                    <input id="product-name" name="name" type="text" maxlength="80" autocomplete="off" required>
+                </div>
+                <div>
+                    <label for="product-category">Categoría *</label>
+                    <input id="product-category" name="category" type="text" maxlength="60" autocomplete="off" required>
+                </div>
+                <div class="field-full">
+                    <label for="product-description">Descripción (opcional)</label>
+                    <textarea id="product-description" name="description" rows="4" maxlength="300"></textarea>
+                </div>
+                <div>
+                    <label for="product-quantity">Cantidad *</label>
+                    <input id="product-quantity" name="quantity" type="number" min="0" step="1" inputmode="numeric" required>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button id="save-product" type="submit">Guardar producto</button>
+                <a class="button secondary" href="productos.html">Cancelar</a>
+            </div>
         </form>
-
     </main>
 
     <footer>
-        Sistema de Inventario
+        Inventario Pastel · Tus productos, siempre a la mano
     </footer>
 
 </body>

@@ -3,67 +3,62 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Productos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Productos | Inventario Pastel</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <h1>Inventario de Productos</h1>
+        <h1>Inventario Pastel</h1>
+        <p>Consulta, modifica o elimina tus productos</p>
     </header>
 
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
+        <a href="productos.html" aria-current="page">Productos</a>
         <a href="agregar.html">Agregar Producto</a>
     </nav>
 
     <main>
-
-        <table>
-
-            <tr>
-                <th>ID</th>
-                <th>Producto</th>
-                <th>Categoría</th>
-                <th>Existencia</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Lápiz</td>
-                <td>Papelería</td>
-                <td>120</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>Cuaderno</td>
-                <td>Papelería</td>
-                <td>50</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>Borrador</td>
-                <td>Papelería</td>
-                <td>35</td>
-            </tr>
-
-            <tr>
-                <td>4</td>
-                <td>Regla</td>
-                <td>Papelería</td>
-                <td>40</td>
-            </tr>
-
-        </table>
-
+        <div class="page-heading">
+            <div>
+                <h2>Productos</h2>
+                <p>Tu catálogo actualizado en tiempo real.</p>
+            </div>
+            <div class="actions">
+                <button id="export-products" class="secondary" type="button">Exportar a Excel (.csv)</button>
+                <a class="button" href="agregar.html">+ Agregar producto</a>
+            </div>
+        </div>
+        <p id="page-message" class="notice" role="status" hidden></p>
+        <section class="table-card">
+            <div class="toolbar">
+                <input id="product-search" type="search" placeholder="Buscar por producto o categoría" aria-label="Buscar productos">
+                <span id="product-count" class="muted"></span>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Existencia</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list"></tbody>
+                </table>
+                <div id="empty-products" class="empty-state" hidden>No hay productos que coincidan con la búsqueda.</div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        Sistema de Inventario
+        Inventario Pastel · Tus productos, siempre a la mano
     </footer>
 
 </body>
