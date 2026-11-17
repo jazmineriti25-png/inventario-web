@@ -220,7 +220,7 @@
         if (existing) {
             document.getElementById("form-title").textContent = "Modificar producto";
             document.getElementById("save-product").textContent = "Guardar cambios";
-            document.title = "Modificar producto | Inventario Pastel";
+            document.title = "Modificar producto | Sistema de Inventario";
             document.getElementById("product-name").value = existing.name;
             document.getElementById("product-category").value = existing.category;
             document.getElementById("product-description").value = existing.description;
